@@ -48,6 +48,11 @@ A console-based Java game built to practice loops, conditional logic, random num
 
 This website was built using React, Three.js, and modern CSS with a focus on a clean professional design and subtle 3D elements.
 
+
+## Live Portfolio
+
+🌐 **[Visit my portfolio](https://personal-portfolio-website-java-bac.vercel.app/)**
+
 ## Author
 
 **Manoj Bhat**
