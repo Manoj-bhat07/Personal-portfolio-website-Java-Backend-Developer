@@ -5,8 +5,9 @@ import React, { useState } from "react";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   return (
-    <div className="portfolio">
+    <div className={`portfolio ${darkMode ? "dark-mode" : "light-mode"}`}>
 
       {/* NAVBAR */}
 <Reveal>
@@ -20,7 +21,13 @@ function App() {
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
-
+     <button
+  className="theme-toggle"
+  onClick={() => setDarkMode(!darkMode)}
+  aria-label="Toggle theme"
+>
+  {darkMode ? "☀" : "☾"}
+</button>
     <button
       className="menu-button"
       onClick={() => setMenuOpen(!menuOpen)}
@@ -28,7 +35,7 @@ function App() {
     >
       ☰
     </button>
-
+    
     {menuOpen && (
   <div className="mobile-menu">
     <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
@@ -36,9 +43,17 @@ function App() {
     <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
     <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
     <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+
+      <button
+      className="mobile-theme-toggle"
+      onClick={() => setDarkMode(!darkMode)}
+      aria-label="Toggle theme"
+    >
+      {darkMode ? "☀" : "☾"} Theme
+    </button>
   </div>
 )}
-
+  
   </nav>
 </Reveal>
 
@@ -565,22 +580,25 @@ function App() {
                 </div>
 
                 <h3>
-                  Number Guessing Game
+                  DiskWise
                 </h3>
 
                 <p>
-                  
-                  A console-based Java game where the player guesses a
-                  randomly generated number. Built to practice loops,
-                  conditional logic, random number generation, and
-                  core Java problem-solving.
+
+                  A Java-based file system and storage analyzer that scans
+                   directories, categorizes files, identifies large and 
+                   duplicate files, and generates detailed scan reports.
+                    Built to strengthen my understanding of Core Java, 
+                    file handling, recursion, and collections.
                 </p>
 
                 <div className="tech-stack">
                   <span>Java</span>
+                   <span>Maven</span>
+                    <span>File I/O, NIO</span>
                 </div>
                  <a
-  href="https://github.com/Manoj-bhat07/NumberGuessingGame.git"
+  href="https://github.com/Manoj-bhat07/DiskWise.git"
   target="_blank"
   rel="noreferrer"
   className="project-link"
