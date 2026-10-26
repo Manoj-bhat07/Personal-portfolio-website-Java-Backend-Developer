@@ -5,9 +5,8 @@ import React, { useState } from "react";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
   return (
-    <div className={`portfolio ${darkMode ? "dark-mode" : "light-mode"}`}>
+    <div className="portfolio ">
 
       {/* NAVBAR */}
 <Reveal>
@@ -21,20 +20,14 @@ function App() {
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
-     <button
-  className="theme-toggle"
-  onClick={() => setDarkMode(!darkMode)}
-  aria-label="Toggle theme"
+     
+<button
+  className="menu-toggle"
+  onClick={() => setMenuOpen(!menuOpen)}
 >
-  {darkMode ? "☀" : "☾"}
+  ☰
 </button>
-    <button
-      className="menu-button"
-      onClick={() => setMenuOpen(!menuOpen)}
-      aria-label="Toggle menu"
-    >
-      ☰
-    </button>
+
     
     {menuOpen && (
   <div className="mobile-menu">
@@ -44,13 +37,6 @@ function App() {
     <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
     <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
 
-      <button
-      className="mobile-theme-toggle"
-      onClick={() => setDarkMode(!darkMode)}
-      aria-label="Toggle theme"
-    >
-      {darkMode ? "☀" : "☾"} Theme
-    </button>
   </div>
 )}
   
